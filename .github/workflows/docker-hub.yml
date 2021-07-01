@@ -12,7 +12,7 @@ on:
 jobs:
   publish-latest:
     runs-on: ubuntu-20.04
-    name: Build, publish and test
+    name: Build, test & publish
     steps:
 
       - name: Checkout the repository
@@ -36,9 +36,6 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Run automated tests & check code coverage report
-        run: make
-
       - name: Build & push the image to Docker Hub
         id: docker_build
         uses: docker/build-push-action@v2
@@ -52,6 +49,9 @@ jobs:
 
       - name: Print the image's digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+
+      - name: Run automated tests & check code coverage report
+        run: make check
 
       - name: Move cache
         # Temp fix
