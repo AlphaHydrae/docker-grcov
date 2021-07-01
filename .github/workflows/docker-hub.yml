@@ -43,9 +43,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags:
-            - ${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest
-            - localhost:5000/${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest,localhost:5000/${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
