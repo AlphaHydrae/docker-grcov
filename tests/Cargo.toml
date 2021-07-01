@@ -1,0 +1,10 @@
+[package]
+name = "grcov_test"
+description = "Simple program to test code coverage with grcov"
+version = "1.0.0"
+edition = "2018"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
