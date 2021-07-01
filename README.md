@@ -1,4 +1,4 @@
-# grcov
+# grcov Docker image
 
 [![Latest Build](https://github.com/AlphaHydrae/grcov/actions/workflows/latest-build.yml/badge.svg)](https://github.com/AlphaHydrae/grcov/actions/workflows/latest-build.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alphahydrae/grcov.svg)](https://hub.docker.com/repository/docker/alphahydrae/grcov)
