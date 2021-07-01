@@ -36,6 +36,9 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: Run automated tests & check code coverage report
+        run: make
+
       - name: Build & push the image to Docker Hub
         id: docker_build
         uses: docker/build-push-action@v2
