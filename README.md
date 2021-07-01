@@ -15,7 +15,7 @@ directory):
 
 ```bash
 cd /path/to/rust/project
-docker run --rm --volume "$(pwd):/usr/src/app" alphahydrae/grcov
+docker run --rm --volume "$(pwd):/usr/src/app" alphahydrae/grcov:1
 ```
 
 By default, two reports will be generated:
