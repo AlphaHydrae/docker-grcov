@@ -9,6 +9,12 @@ on:
       - .gitignore
   workflow_dispatch:
 
+services:
+  registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+
 jobs:
   publish-latest:
     runs-on: ubuntu-20.04
