@@ -43,7 +43,9 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest
+          tags:
+            - ${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest
+            - localhost:5000/${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
@@ -51,7 +53,8 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
       - name: Run automated tests & check code coverage report
-        run: make check
+        run:
+          GRCOV_IMAGE=localhost:5000/${{ secrets.DOCKER_HUB_USERNAME }}/grcov:latest make check
 
       - name: Move cache
         # Temp fix
