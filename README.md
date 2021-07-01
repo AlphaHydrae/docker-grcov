@@ -10,13 +10,18 @@ tests and generate [code coverage][code-coverage] reports.
 ## Usage
 
 You can mount your source code's directory into the image; it will run the tests
-and generate code coverage reports (note that this will modify your `target`
-directory):
+and generate code coverage reports:
 
 ```bash
 cd /path/to/rust/project
 docker run --rm --volume "$(pwd):/usr/src/app" alphahydrae/grcov:1
 ```
+
+This will basically run `cargo test` on your project and then generate the code
+coverage reports with `grcov` (note that this will modify your `target`
+directory). See
+[`./fs/usr/local/bin/docker-command.sh`](./fs/usr/local/bin/docker-command.sh)
+for more information.
 
 By default, two reports will be generated:
 
