@@ -1,6 +1,7 @@
 # grcov
 
 [![Latest Build](https://github.com/AlphaHydrae/grcov/actions/workflows/latest-build.yml/badge.svg)](https://github.com/AlphaHydrae/grcov/actions/workflows/latest-build.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alphahydrae/grcov.svg)](https://hub.docker.com/repository/docker/alphahydrae/grcov)
 [![MIT License](https://img.shields.io/static/v1?label=license&message=MIT&color=informational)](https://opensource.org/licenses/MIT)
 
 Docker image with [grcov][grcov] installed to quickly
