@@ -9,16 +9,15 @@ on:
       - .gitignore
   workflow_dispatch:
 
-services:
-  registry:
-    image: registry:2
-    ports:
-      - 5000:5000
-
 jobs:
   publish-latest:
-    runs-on: ubuntu-20.04
     name: Build, test & publish
+    runs-on: ubuntu-20.04
+    services:
+      registry:
+        image: registry:2
+        ports:
+          - 5000:5000
     steps:
 
       - name: Checkout the repository
