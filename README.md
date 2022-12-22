@@ -14,7 +14,7 @@ and generate code coverage reports:
 
 ```bash
 cd /path/to/rust/project
-docker run --rm --volume "$(pwd):/usr/src/app" alphahydrae/grcov:1
+docker run --rm --volume "$(pwd):/usr/src/app" alphahydrae/grcov:2
 ```
 
 This will basically run `cargo test` on your project and then generate the code
@@ -29,6 +29,13 @@ By default, two reports will be generated:
   `index.html` file within it in your favorite browser.
 * An [LCOV][lcov] report file in `./target/debug/coverage/rust.lcov`. This
   report can be uploaded to a cloud platform like [Codecov][codecov].
+
+## Versions
+
+| Version | Rust Version |
+| :------ | :----------- |
+| 1       | 1.53.0       |
+| 2       | 1.66.0       |
 
 ## Configuration
 

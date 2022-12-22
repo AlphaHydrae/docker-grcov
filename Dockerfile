@@ -1,7 +1,7 @@
-FROM rust:1.53.0
+FROM rust:1.66.0
 
 ENV RUSTC_BOOTSTRAP=1 \
-    RUSTFLAGS="-Zinstrument-coverage" \
+    RUSTFLAGS="-Cinstrument-coverage" \
     LLVM_PROFILE_FILE="target/debug/rust-%p-%m.profraw" \
     GRCOV_HTML_DIR=./target/debug/coverage \
     GRCOV_LCOV_FILE=./target/debug/coverage/rust.lcov
